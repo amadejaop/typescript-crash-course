@@ -86,3 +86,52 @@ const user1: UserInterface = {
 // can't use interface Point = number | string
 type Point = number | string;
 const p1: Point = 1;
+
+interface mathFunc {
+    (x: number, y: number): number
+}
+
+const add: mathFunc = (x: number, y: number): number => x + y;
+const sub: mathFunc = (x: number, y: number): number => x - y;
+
+interface PersonInterface{
+    id: number,
+    name: string
+    register(): string
+};
+
+// Classes
+class Person implements PersonInterface {
+    id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id = id
+        this.name = name
+    }
+
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+
+const brad = new Person(1, 'Brad Traversy');
+const mike = new Person(2, 'Mike Jordan');
+
+/* console.log(brad);
+console.log(mike);
+console.log(brad.register()); */
+
+// Subclasses
+class Employee extends Person {
+    position: string
+    constructor(id: number, name: string, position: string) {
+        super(id, name)
+        this.position = position
+    }
+}
+
+const emp = new Employee(3, 'Shawn', 'developer');
+
+console.log(emp.name);
+console.log(emp.register());

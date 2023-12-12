@@ -60,3 +60,31 @@ const user1 = {
     name: 'John'
 };
 const p1 = 1;
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+;
+// Classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const brad = new Person(1, 'Brad Traversy');
+const mike = new Person(2, 'Mike Jordan');
+/* console.log(brad);
+console.log(mike);
+console.log(brad.register()); */
+// Subclasses
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Shawn', 'developer');
+console.log(emp.name);
+console.log(emp.register());
