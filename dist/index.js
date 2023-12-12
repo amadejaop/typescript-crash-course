@@ -86,5 +86,14 @@ class Employee extends Person {
     }
 }
 const emp = new Employee(3, 'Shawn', 'developer');
-console.log(emp.name);
-console.log(emp.register());
+/* console.log(emp.name);
+console.log(emp.register()); */
+// Generics
+// takes an array of items of any type
+// returns an array of any type
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['Brad', 'John', 'Jill']);
+// strArray.push(1); // gives an error as 1 is not a string
